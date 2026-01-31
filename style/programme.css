@@ -1,0 +1,176 @@
+/* page programmes */
+#banniere{
+    background-image: url("../images/prog/ban2.jpg");
+    background-size: cover;
+    height: 45vh;
+    background-position: top 25% right 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#banniere h4{
+    font-size: 40px;
+    color: white;
+}
+/* conteneur programmes */
+#Programmes .ProgContainer {
+    display: flex;
+    flex-direction: row; /* disposition horizontale */
+    flex-wrap: wrap;
+    align-items: flex-start; /* IMPORTANT : empêche les cartes de s'étirer en hauteur */
+    
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+.details-complets {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    font-size: 0.9em;
+}
+/* carte programme */
+ .prog {
+    width: 19%;
+    min-width: 250px;
+    border: 1px solid #eee;
+    background: #ffffff;  
+    box-shadow: 10px 15px 20px rgba(0,0, 0, 0.08);
+    margin: 10px 10px;
+    text-align: center; 
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+ /* description programme */
+ .prog .desc2 p{
+    font-size: 14px;
+    font-weight: 300;
+
+}
+/* image programme */
+.prog img {
+    width: 100%;           /* L'image prend toute la largeur de la carte */
+    height: 250px;         /*  hauteur fixe*/
+    object-fit: cover;     
+    object-position: center; /* Centre le sujet de l'image */
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;   
+    
+}
+
+/*effet hover carte*/
+ .prog:hover{
+   box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.3);
+}
+ .prog .desc2{
+    padding-left: 15px;
+    text-align: start;
+}
+/* bouton programme */
+
+ .prog button{
+    border: 1px solid #ff008c;
+    color: #ff008c;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px 35px;
+    font-size: 20px;
+    background-color: white;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+/*hover bouton*/
+ .prog button:hover{
+    transform: scale(1.05);
+    background-color: #ff008c;
+    color: white;
+    border-color: white;
+}
+/* détails déroulants */
+.details-complets {
+    max-height: 0;         /* Cache le contenu */
+    overflow: hidden;      /* Empêche le texte de dépasser */
+    opacity: 0;            /* Rend invisible pour la transition */
+    transition: all 0.5s ease-in-out; 
+}
+/*carte active avec du js*/
+.prog.active {
+    width: 27%;           /* Agrandit légèrement la largeur */
+    transform: scale(1.001); /* Petit zoom fluide */
+    z-index: 10;          /* Passe devant les autres */
+}
+/* Quand la carte est active, on déplie */
+.prog.active .details-complets {
+    max-height: 600px; 
+    padding-top: 15px;
+    max-height: 1000px;   
+    opacity: 1;            
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+/* Style rapide pour le tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th { background-color: #f2f2f2; }
+
+
+
+@media  (max-width: 1024px) {
+    #banniere {
+    height: 30vh;
+}
+#banniere h4 {
+    font-size: 27px;
+    padding: 20px;
+}
+    .prog {
+        width: 40%; /* On affiche 2 cartes par ligne */
+        margin: 10px 2%;
+        
+    }
+    #Programmes .ProgContainer {
+    justify-content: space-around;
+    gap: 10px;
+    padding: 20px;
+}
+    .prog.active {
+        width: 95%; /* La carte active prend presque toute la largeur pour être lisible */
+    }
+}
+/* Media Query mobile */
+@media (max-width:477px){
+    #banniere {
+    height: 25vh;
+}
+    #banniere h4 {
+    font-size: 23px;
+    padding: 15px;
+}
+    .prog.active {
+        width: 98%;
+       
+    }
+    .prog button {
+        width: 70%; 
+        font-size: 14px;
+        padding: 15px 20px;
+    }
+    table {
+        font-size: 12px; 
+    }
+}

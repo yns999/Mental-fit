@@ -1,0 +1,253 @@
+/*filtre*/
+#filtre{
+    background-image: url("../images/prod/baniere.png"); /* image de fond du filtre */
+    background-size: cover;
+    background-position: top 25% right 0;
+    margin-bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+/*titre du filtre*/
+#filtre h5{
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+/*conteneur des boutons de filtre*/
+#filtre .filtre-container{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+/*style des boutons de filtre*/
+#filtre .filtre-container button{
+    background-color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+
+}
+/*bouton actif ou survolé*/
+#filtre .filtre-container button.active, #filtre .filtre-container button:hover{
+    background-color: #ff008c;
+    color: white;
+}
+/*menu déroulant*/
+#filtre .filtre-grp {
+    position: relative;
+    display: inline-block;
+}
+/*sous-menu du filtre*/
+#filtre .filtre-grp .sous-filtre{
+    display: none; /* masqué par défaut */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e9e9e9;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1000;
+    transition: 0.2s;
+}
+/*liens du sous-filtre*/
+#filtre .filtre-grp .sous-filtre a{
+    color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+/*effet au survol des liens*/
+#filtre .filtre-grp .sous-filtre a:hover{
+    background-color: #f5f5f5;
+    color: #ff008c;
+}
+/*afficher le sous-menu au survol*/
+#filtre .filtre-grp:hover .sous-filtre{
+    display: block;
+}
+/*changer le style du bouton quand le sous-menu est ouvert*/
+#filtre .filtre-grp:hover button{
+    background-color: #ff008c;
+    color: white;
+}
+#filtre .filtre-grp:hover button fleche{
+    font-size: 10px;
+}
+/* classe ajouté aux element avec du js pour masquer les articles */
+.hidden{
+    display: none;
+}
+/*magasin*/
+
+#magasin{
+    
+    text-align: center;
+}
+/*conteneur des cartes produits*/
+#magasin .prodContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+
+}
+/*nom de la catégorie*/
+#magasin .nomCat{
+    background-color: #e9e9e9;
+    padding: 15px;
+    font-size: 23px;
+    box-shadow: 5px 15px 20px rgba(0,0, 0, 0.06);
+}
+#magasin h2{
+    font-size: 30px;
+}
+#magasin  p {
+    font-weight: 500;
+    font-size: 20px;
+}
+#magasin  .pro{
+    position: relative;
+}
+
+/*carte produit*/
+#magasin .pro {
+    width: 19%;
+    min-width: 250px; /* largeur minimale de la carte */
+    border: 1px solid #eee;
+    background: #ffffff;  
+    margin: 10px 10px;
+    text-align: center; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    transition: 0.3s;
+
+}
+/*ombre au survol*/
+#magasin .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0,0, 0, 0.06);
+}
+/*image produit*/
+#magasin .pro img{
+    width: 80%;
+    height: 250px;
+    border-radius: 20px;
+    object-fit: contain;
+}
+/*description du produit*/
+#magasin .pro .desc {
+    text-align: start;
+    padding: 10px 10px;
+}
+#magasin .pro .desc span {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#magasin .pro .desc h4 {
+    margin-top: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+#magasin .pro .desc h5 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff008c;
+}
+/*bouton ajouter au panier*/
+#magasin .pro button{
+    background:  #ff8aca24 url("../images/chariot.svg") no-repeat center;
+    background-size: 22px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    color: transparent; /* cache le texte Acheter */
+    transition: 0.3s;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+/*effet au survol du bouton*/
+#magasin .pro button:hover{
+    transform: scale(1.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background-color:  #ff008c;
+}
+/*avis (étoiles)*/
+#magasin .etoile {
+    display: inline-flex;         /* Active le mode flex */
+    align-items: center;   /* Aligne parfaitement le texte et l'image sur le même axe central */
+    gap: 5px;             /* Ajoute un petit espace entre le texte et l'étoile */
+    font-size: 15px;
+   font-weight: 500;
+    margin: 5px 0;        /* Un peu d'espace au dessus/dessous */
+}
+#magasin .etoile img{
+    height: 14px;
+    width: 14px;
+    padding-bottom: 0;
+    margin-left: 4px;
+}
+
+
+/*media query*/
+@media (max-width:477px){
+    /*ajustement du filtre sur petit écran*/
+    #filtre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    margin-bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    }
+    #filtre .filtre-container {
+    gap: 5px;
+    padding: 10px;
+    }
+
+
+/* /////////////////// */
+
+/*réduction des boutons*/
+#filtre .filtre-container button {
+    font-size: 13px;
+    padding: 10px 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 400;
+   
+}
+/*ajustement des cartes produits*/
+#magasin .prodContainer {
+    padding-top: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#magasin .pro .desc {
+    padding: 5px 10px;
+}
+#magasin .pro {
+    width: 20%;
+    min-width: 180px;
+    margin: 10px 5px;
+}
+}
