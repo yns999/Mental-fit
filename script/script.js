@@ -212,3 +212,18 @@ function calcTotal() {
     if (t1) t1.innerText = total + " DA";
     if (t2) t2.innerText = (total + 600) + " DA";
 }
+// confirmation de la commande
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector("#sous-total button");
+
+    if (btn) {
+        btn.addEventListener("click", () => {
+            const confirmation = confirm("Voulez-vous vraiment valider votre commande ?");
+
+            if (confirmation) {
+                alert("✅ Commande validée avec succès !");
+            }
+        });
+    }
+})
